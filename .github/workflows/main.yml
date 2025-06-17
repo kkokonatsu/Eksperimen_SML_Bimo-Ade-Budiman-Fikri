@@ -39,6 +39,6 @@ jobs:
           path: |
             preprocessing/X_train_personality_processing.csv
             preprocessing/X_test_personality_processing.csv
-            preprocessing/namadataset_preprocessing_y_train.csv
-            preprocessing/namadataset_preprocessing_y_test.csv
+            preprocessing/y_train.csv
+            preprocessing/y_test.csv
           retention-days: 7

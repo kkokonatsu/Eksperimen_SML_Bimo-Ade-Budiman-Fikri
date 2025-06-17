@@ -4,7 +4,6 @@ from sklearn.model_selection import train_test_split
 from joblib import load, dump
 import os
 import mlflow
-import mlflow.sklearn
 
 RAW_DATA_FILENAME = 'personality_raw.csv' 
 PREPROCESSOR_FILENAME = f'preprocessor.joblib' 
@@ -87,11 +86,10 @@ with mlflow.start_run(run_name=f"Preprocessing_Run_{pd.Timestamp.now().strftime(
 
     print("\nMenyimpan data hasil preprocessing...")
 
-    train_X_output_filename = os.path.join(PREPROCESSED_DATA_DIR, 'namadataset_preprocessing_X_train.parquet')
-    test_X_output_filename = os.path.join(PREPROCESSED_DATA_DIR, 'namadataset_preprocessing_X_test.parquet')
-    train_y_output_filename = os.path.join(PREPROCESSED_DATA_DIR, 'namadataset_preprocessing_y_train.csv')
-    test_y_output_filename = os.path.join(PREPROCESSED_DATA_DIR, 'namadataset_preprocessing_y_test.csv')
-
+    train_X_output_filename = os.path.join(PREPROCESSED_DATA_DIR, 'X_train_personality_processing.csv')
+    test_X_output_filename = os.path.join(PREPROCESSED_DATA_DIR, 'X_test_personality_processing.csv')
+    train_y_output_filename = os.path.join(PREPROCESSED_DATA_DIR, 'y_train.csv')
+    test_y_output_filename = os.path.join(PREPROCESSED_DATA_DIR, 'y_test.csv')
 
     try:
         X_train_processed_df.to_csv(train_X_output_filename, index=False)
