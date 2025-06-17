@@ -6,7 +6,7 @@ import os
 import mlflow
 import mlflow.sklearn
 
-RAW_DATA_FILENAME = 'namadataset_raw.csv' 
+RAW_DATA_FILENAME = 'personality_raw.csv' 
 PREPROCESSOR_FILENAME = f'preprocessor.joblib' 
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__)) 
@@ -15,7 +15,7 @@ PROJECT_ROOT_DIR = os.path.dirname(BASE_DIR)
 RAW_DATA_PATH = os.path.join(PROJECT_ROOT_DIR, RAW_DATA_FILENAME) 
 PREPROCESSOR_PATH = os.path.join(BASE_DIR, PREPROCESSOR_FILENAME) 
 
-PREPROCESSED_DATA_DIR = os.path.join(BASE_DIR, 'namadataset_preprocessing')
+PREPROCESSED_DATA_DIR = os.path.join(BASE_DIR, 'personality_preprocessed')
 os.makedirs(PREPROCESSED_DATA_DIR, exist_ok=True)
 
 print(f"Direktori Proyek: {PROJECT_ROOT_DIR}")
